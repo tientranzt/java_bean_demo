@@ -14,8 +14,8 @@
 
 
 	
-	<bean name="employee" class="com.tientranzt.entity.Employee">
-	
+	<bean name="employee" class="com.tientranzt.entity.Employee" init-method="onInit" destroy-method="onDestroy">
+		<property name="name" value="tientran"></property>
 	</bean>
 	
 </beans>

@@ -15,11 +15,11 @@ public class HomePageController {
 	@RequestMapping("/")
 	@ResponseBody
 	public String homePage() {
-		
-		@SuppressWarnings("resource")
+	
 		ApplicationContext context =  new ClassPathXmlApplicationContext("IoC.xml");
 		Employee employee = (Employee) context.getBean("employee");
 		employee.getMessage();
+		((ClassPathXmlApplicationContext) context).close();
 		
 		return "home page !";
 
